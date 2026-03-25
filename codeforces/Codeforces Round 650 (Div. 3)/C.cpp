@@ -9,11 +9,7 @@ int main(){
         int n,k; cin>>n>>k;
         string s; cin>>s;
         int ans=0;
-        int m=k;
-        while(m--){
-            s=s+'0';
-            s='0'+s;
-        }
+        s=string(k,'0')+s+string(k,'0');
         s=s+'1';
         s='1'+s;
         int l=0;
@@ -23,7 +19,7 @@ int main(){
             if(l==r) ++r;
             if(r>=len) break;
             while(s[r]=='0') ++r;
-            ans+=(r-l)/(k+1)-1;
+            ans+=(r-l)/(k+1)-1;    //Please record this formula, which is vital and straight-forward.
             l=r;
         }
         cout<<ans<<endl;
